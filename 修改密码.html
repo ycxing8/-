@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+		<meta charset="utf-8" >
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=none">
+		<title>修改密码</title>
+		<!-- 引入CSS -->
+		<link rel="stylesheet" href="身份认证.css">
+		<link rel="stylesheet"  href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<link rel="stylesheet"  href="bootstrap-3.3.7-dist/css/bootstrapValidator.min.css">
+		<!-- 引入jS 在这之前先运行jquery-->
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script  src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<script  src="bootstrap-3.3.7-dist/js/bootstrapValidator.min.js"></script>		
+		<!-- 内部样式：背景图片 -->
+	</head>
+	<body onload="nameload()">
+	<div class="container">
+	<div class="row">
+	<div class="col-lg-3 col-sm-3">
+		<!-- 左侧导航栏 -->
+		<ul class="nav  nav-pills nav-stacked" style="clear: both; background-color:#2F4F4F">
+		<li><img class="img-responsive" src=背景图/title1.png></img></li>
+		<li><a style="color:#ffffff" id="user1">退出登录</a></li>
+		<li><br></br></li><li><br></br></li><li><br></br></li><li><br></br></li><li><br></br></li>
+		<li><br></br></li><li><br></br></li><li><br></br></li><li><br></br></li><li><br></br></li>
+		<li><br></br></li><li><br></br></li>
+		</ul>
+	</div>
+	<div class="col-lg-9 col-sm-9">
+		<!-- 右侧面板 -->
+		<h3>修改密码</h3>
+		<hr></hr>
+		<div class="panel panel-warning">
+		<div class="panel-heading "><strong>注意：</strong>修改完密码之后需要重新登录</div>
+		<!-- 面板的body里面可以嵌套很多东西，比如表格 -->
+		<div class="panel-body">
+			<!-- 输入表单 -->
+			<form id="passwordchangeform">
+						<fieldset>
+							<div class="form-group">
+								<label>当前密码</label>
+								<input type="password" class="form-control"  name="name" id="nowpassword"></input>
+							</div>
+							<div class="form-group">
+								<label>新密码</label>
+								<input type="password" class="form-control"  name="password" id="newpassword" placeholder="密码长度至少6位;类型为数字，字母和下划线"></input>
+							</div>	
+							<div class="form-group">
+								<label>确认新密码</label>
+								<input type="password" class="form-control"  name="password1" id="conpassword" placeholder="确认密码和新密码保持一致"></input>
+							</div>
+							<div>
+								<button type="button" class="btn btn-primary" name="btn-login" onclick="login()">保存</button>
+							</div>	
+						</fieldset>
+					</form>
+		</div>
+		<div class="panel-footer"></div>
+		</div>
+	</div>
+	</div>
+	</div>
+	<!-- </nav> -->
+	</body>
+	<script>
+		<!-- 两个页面通过URL传值：用户的名字 -->
+		var name;
+	function nameload(){
+		name = location.href;
+		<!-- var password = name.split("&")[1]; -->
+		<!-- password = password.split("=")[1];  -->
+		<!-- name = name.split("?")[1]; -->
+		<!-- name = name.split("=")[1]; -->
+		<!-- name = "当前用户:" + name; -->
+		document.getElementById("user1").innerHTML=name;
+		}
+	<!-- 表单验证 -->、
+		$(function () {
+        $("#passwordchangeform").bootstrapValidator({
+		message: '通用的验证失败消息',
+		feedbackIcons: {
+			valid: 'glyphicon glyphicon-ok',
+			invalid: 'glyphicon glyphicon-remove',
+			validating: 'glyphicon glyphicon-refresh'},
+		fields: {
+                password: {
+                    message: '用户名验证失败',
+                    validators: {
+                        notEmpty: {
+                            message: '用户名不能为空'
+                        },
+						stringLength: {
+                        min: 6,  
+                        max: 12,  
+                        message: '密码长度：6-12'  
+                    },  
+                    regexp: {//正则验证  
+                        regexp: /^[a-zA-Z0-9_\.]+$/,  
+                        message: '只能输入数字，字母和下划线'  
+                    }
+                    }
+                },
+                password1: {
+                    validators: {
+                        notEmpty: {
+                            message: '密码不能为空'
+							},
+						stringLength: {
+                        min: 6,  
+                        max: 12,
+                        message: '密码长度：6-12'
+                        },
+						regexp: {//正则验证  
+                        regexp: /^[a-zA-Z0-9_\.]+$/,  
+                        message: '只能输入数字，字母和下划线'  
+                    }
+                }
+            }
+        }
+		});
+    });
+	</script>
+</html>

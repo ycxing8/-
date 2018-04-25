@@ -1,0 +1,494 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+		<meta charset="utf-8" >
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=none">
+		<title>用户管理</title>
+		<!-- 引入CSS -->
+		<link rel="stylesheet" href="身份认证.css">
+		<link rel="stylesheet"  href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<link rel="stylesheet"  href="bootstrap-3.3.7-dist/css/bootstrapValidator.min.css">
+		<!-- 引入jS 在这之前先运行jquery-->
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script  src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<script  src="bootstrap-3.3.7-dist/js/bootstrapValidator.min.js"></script>		
+		<!-- 内部样式：背景图片 -->
+	</head>
+	<body>
+	<div class="container">
+	<div class="row">
+	<div class="col-lg-3 col-sm-3">
+		<!-- 左侧导航栏 -->
+		<ul class="nav  nav-pills nav-stacked" style="clear: both; background-color:#2F4F4F">
+		<li><img class="img-responsive" src=背景图/title1.png></img></li>
+		<li><a style="color:#fffff" id="list1">用户名</a></li>
+		<li><a style="color:#00ff00" id="list2"><strong>添加用户</strong></li>
+		<li><a style="color:#00ff00" id="list3"><strong>修改密码</strong></li>
+		<li><a style="color:#00ff00" id="list4"><strong>修改权限</strong></li>
+		<li><a style="color:#000000"><br></br></li>
+		<li><br></br></li><li><br></br></li><li><br></br></li><li><br></br></li><li><br></br></li>
+		<li><br></br></li><li><br></br></li><li><br></br></li><li><br></br></li><li><br></br></li>
+		</ul>
+	</div>
+	<!-- 右侧内容 -->
+	<div class="col-lg-9 col-sm-9">
+		<div class="content">
+			<div id="con1">
+		<h3>添加用户</h3>
+		<hr></hr>
+		<div class="panel panel-warning">
+		<div class="panel-heading "><strong>注意：</strong>合理分配用户权限</div>
+			<div class="panel-body">
+			<!-- 输入表单 -->
+			<form id="adduserform">
+						<fieldset>
+							<div class="form-group">
+								<label>用户名</label>
+								<input type="text" class="form-control"  name="name" id="newusername"></input>
+							</div>
+							<div class="form-group">
+								<label>密码</label>
+								<input type="password" class="form-control"  name="password" id="newpassword1" placeholder="密码长度至少6位;类型为数字，字母和下划线"></input>
+							</div>	
+							<div class="form-group">
+								<label>确认密码</label>
+								<input type="password" class="form-control"  name="password" id="conpassword1" placeholder="确认密码和新密码保持一致"></input>
+							</div>
+								<label>权限:</label>
+								<div class="form-group">
+								 <label><span><small>normal</small></span><input type="radio" name="optionsRadios" id="optionsRadios1" checked></label>
+								 <label><span><small>special</small></span><input type="radio" name="optionsRadios" id="optionsRadios2" ></label>
+								  <label><span><small>admin</small></span><input type="radio" name="optionsRadios" id="optionsRadios3"></label>
+								 </div>
+						</fieldset>
+					</form>
+		</div>
+		<div class="panel-footer"><div><button type="button" class="btn btn-primary" id="btn-adduser">保存</button></div>	</div>
+		</div>
+			</div>
+		<div id="con2" style="display: none">
+		<h3>修改密码</h3>
+		<hr></hr>
+			<div class="input-group">
+				<div class="input-group-addon">
+				<div class="dropdown open">
+							<label class="dropdown-toggle" data-toggle="dropdown" id="chpassl1">用户名<span class="caret"></span></label>
+							<ul class="dropdown-menu" style="display: none" id="name-list">
+								<li><a  id="name-list1" style="display: none" href="#" ></a></li>
+								<li><a  id="name-list2" href="#" style="display: none"></a></li>		
+								<li><a  id="name-list3" href="#" style="display: none"></a></li>
+								<li><a  id="name-list4" style="display: none" href="#" ></a></li>
+								<li><a  id="name-list5" href="#" style="display: none"></a></li>		
+								<li><a  id="name-list6" href="#" style="display: none"></a></li>
+								<li><a  id="name-list7" href="#" style="display: none"></a></li>
+								<li><a  id="name-list8" style="display: none" href="#" ></a></li>
+								<li><a  id="name-list9" href="#" style="display: none"></a></li>		
+								<li><a  id="name-list10" href="#" style="display: none"></a></li>								
+							</ul>
+							</div>
+						</div>
+				<input type="text" class="form-control"  name="name" id="chpassname"></input>
+			</div>
+		<div class="panel panel-info">
+		<div class="panel-heading "><strong>描述：</strong>请选择需要修改密码的用户</div>
+			<div class="panel-body">
+			<!-- 输入表单 -->
+			<form id="chpassform">
+						<fieldset>
+							<!-- <a class="dropdown-toggle" data-toggle="dropdown" id="chpassa1" href="#" style="text-decoration:none;color:#000000">用户名<span class="caret"></span></a> -->
+							<div class="form-group">
+								<label>旧密码</label>
+								<input type="password" class="form-control"  name="password" id="chpassoldpassword1" placeholder="输入原来的密码"></input>
+							</div>	
+							<div class="form-group">
+								<label>新密码</label>
+								<input type="password" class="form-control"  name="password" id="chpassnewpassword1" placeholder="密码长度至少6位;类型为数字"></input>
+							</div>
+						</fieldset>
+					</form>
+		</div>
+		<div class="panel-footer"><div><button type="button" class="btn btn-primary" id="btn-chpass">修改</button></div></div>
+		</div>
+		</div>
+			<div id="con3" style="display: none">
+			<h3>修改权限</h3>
+			<hr></hr>
+			<div class="input-group">
+				<div class="input-group-addon">
+				<div class="dropdown open">
+							<label class="dropdown-toggle" data-toggle="dropdown" id="chpower1">用户名<span class="caret"></span></label>
+							<ul class="dropdown-menu" style="display: none" id="bname-list">
+								<li><a  id="bname-list1" style="display: none" href="#" ></a></li>
+								<li><a  id="bname-list2" href="#" style="display: none"></a></li>		
+								<li><a  id="bname-list3" href="#" style="display: none"></a></li>
+								<li><a  id="bname-list4" style="display: none" href="#" ></a></li>
+								<li><a  id="bname-list5" href="#" style="display: none"></a></li>		
+								<li><a  id="bname-list6" href="#" style="display: none"></a></li>
+								<li><a  id="bname-list7" href="#" style="display: none"></a></li>
+								<li><a  id="bname-list8" style="display: none" href="#" ></a></li>
+								<li><a  id="bname-list9" href="#" style="display: none"></a></li>		
+								<li><a  id="bname-list10" href="#" style="display: none"></a></li>								
+							</ul>
+							</div>
+						</div>
+				<input type="text" class="form-control"  name="name" id="chpowername"></input>
+			</div>
+			<hr></hr>
+					<label>选择权限:</label>
+						<div class="form-group">
+						<label><span><small>normal</small></span><input type="radio" name="powerRadios" id="powerRadios1" checked></label>
+						<label><span><small>special</small></span><input type="radio" name="powerRadios" id="powerRadios2" ></label>
+						 <label><span><small>admin</small></span><input type="radio" name="powerRadios" id="powerRadios3"></label>
+					</div>
+					<div><button type="button" class="btn btn-primary" id="btn-chpower">修改</button>
+			</div>			
+		</div>
+	</div>
+	</div>
+	</div>
+	</body>
+	<script>
+	$(document).ready(function(){
+		<!-- 全局变量定义 -->
+		var name="name";
+		var password="password";
+		var temp="none";
+		var power="normal";
+		var changepower = "normal";
+		<!-- 获取跳转过来的用户名 -->
+		var user = location.href;
+		user = user.split("=")[1];
+		user = "当前用户:" + user;
+		document.getElementById("list1").innerHTML=user;
+		<!-- 点击切页 -->
+		$("#list2").click(function(){
+			opencon(1);
+		});
+		$("#list3").click(function(){
+			opencon(2);
+		});
+		$("#list4").click(function(){
+			opencon(3);
+		});
+		function opencon(num){
+			for (var i = 1; i < 4; i++) {
+            if (i == num) {
+                temp = "block";
+            } else {
+                temp = "none";
+            }
+            document.getElementById("con" + i).style.display = temp;
+		}
+		}
+		<!-- 单选按钮-权限选择 -->
+		$("#optionsRadios1").click(function(){
+			power="2";
+		});
+		$("#optionsRadios2").click(function(){
+			power="1";
+		});
+		$("#optionsRadios3").click(function(){
+			power="0";
+		});
+		<!-- 添加用户的表单验证 -->
+		$(function () {
+        $("#adduserform").bootstrapValidator({
+		message: '通用的验证失败消息',
+		feedbackIcons: {
+			valid: 'glyphicon glyphicon-ok',
+			invalid: 'glyphicon glyphicon-remove',
+			validating: 'glyphicon glyphicon-refresh'},
+		fields: {
+                name: {
+                    message: '用户名验证失败',
+                    validators: {
+                        notEmpty: {
+                            message: '用户名不能为空'
+                        }
+                    }
+                },
+                password: {
+                    validators: {
+                        notEmpty: {
+                            message: '密码不能为空'
+							},
+						stringLength: {
+                        min: 6,  
+                        max: 12,
+                        message: '密码长度：6-12'
+                        },
+						regexp: {//正则验证  
+                        regexp: /^[a-zA-Z0-9_\.]+$/,  
+                        message: '只能输入数字，字母和下划线'  
+                    }
+                }
+            }
+        }
+		});
+    });
+		<!-- 修改密码的表单验证 -->
+		$(function () {
+        $("#chpassform").bootstrapValidator({
+		message: '通用的验证失败消息',
+		feedbackIcons: {
+			valid: 'glyphicon glyphicon-ok',
+			invalid: 'glyphicon glyphicon-remove',
+			validating: 'glyphicon glyphicon-refresh'},
+		fields: {
+                name: {
+                    message: '用户名验证失败',
+                    validators: {
+                        notEmpty: {
+                            message: '用户名不能为空'
+                        }
+                    }
+                },
+                password: {
+                    validators: {
+                        notEmpty: {
+                            message: '密码不能为空'
+							},
+						stringLength: {
+                        min: 6,  
+                        max: 12,
+                        message: '密码长度：6-12'
+                        },
+						regexp: {//正则验证  
+                        regexp: /^[a-zA-Z0-9_\.]+$/,  
+                        message: '只能输入数字，字母和下划线'  
+                    }
+                }
+            }
+        }
+		});
+    });
+	<!-- 添加用户-密码重复验证 -->
+		$("#btn-adduser").click(function(){
+			name = document.getElementById("newusername").value;
+			var pass = document.getElementById("newpassword1").value;
+			var pass1 = document.getElementById("conpassword1").value;
+			if(name.length == 0){ alert("请输入用户名"); return;}
+			if(pass.length == 0){alert("请输入密码");return;}
+			if(pass1.length == 0){alert("请输入确认密码");return;}
+			if(pass == pass1){
+			<!-- 提交服务器 -->
+				password = pass;
+				newuser =new Object();
+				newuser.name=name;
+				newuser.password=password;
+				newuser.power=power;
+				$.ajax({
+					type:"POST",
+					url:"http://101.132.126.248:8081/api/user/add",
+					dataType:"text",
+					data: {"name":name,"password":password,"power":power},
+					success: function(result){
+						alert("用户添加成功");
+					},
+					error: function(xhr){
+						alert("error:"+xhr);
+					}
+				});
+			}
+			else {
+			alert("密码两次输入不一致");
+			}
+		});
+		<!-- 下拉列表显示和选择 -->
+		$("#chpassl1").click(function(){
+			<!-- 点击之后获取所有用户名 -->
+			$.ajax({
+			type:"GET",
+			dataType:"json",
+			url:"http://101.132.126.248:8081/api/user/get_all_user_message",
+			success:function(result){
+				var length = Object.keys(result).length;
+				for(var i = 1;i<11;i++){
+					var list = "name-list" + i; 
+					var obj = document.getElementById(list);
+					if(i<(length+1)){
+						obj.innerHTML = result[i-1].name;
+						obj.style.display = "block";
+					}
+					else{
+						obj.style.display = "none";
+					}
+				}
+				document.getElementById("name-list").style.display= "block";
+			},
+			error:function(){
+			alert("error");
+			}
+			});
+		});
+		$("#name-list1").click(function(){
+			listclick(1);
+		});	
+		$("#name-list2").click(function(){
+			listclick(2);
+		});	
+		$("#name-list3").click(function(){
+			listclick(3);
+		});
+		$("#name-list4").click(function(){
+			listclick(4);
+		});	
+		$("#name-list5").click(function(){
+			listclick(5);
+		});	
+		$("#name-list6").click(function(){
+			listclick(6);
+		});	
+		$("#name-list7").click(function(){
+			listclick(7);
+		});	
+		$("#name-list8").click(function(){
+			listclick(8);
+		});	
+		$("#name-list9").click(function(){
+			listclick(9);
+		});		
+		$("#name-list10").click(function(){
+			listclick(10);
+		});
+		function listclick(num){
+			var listnum = "name-list" + num;
+			var name = document.getElementById(listnum).innerHTML;
+			document.getElementById("chpassname").value = name;
+			document.getElementById("name-list").style.display= "none"	;	
+		}
+		<!-- 点击修改 -->
+		$("#btn-chpass").click(function(){
+			var name = document.getElementById("chpassname").value;
+			var oldword = document.getElementById("chpassoldpassword1").value;
+			var newword = document.getElementById("chpassnewpassword1").value;
+			user = user.split(":")[1];
+			if( name.length == 0){
+				alert("请选择用户");
+			}
+			else if(oldword.length == 0){
+				alert("请输入旧密码");
+			}
+			else if(newword.length == 0){
+				alert("请输入旧密码");
+			}
+			else{
+			<!-- ajax发送 -->
+			$.ajax({
+			 type:"POST",
+			 dataType:"text",
+			 url:"http://101.132.126.248:8081/api/user/change_password",
+			 data:{"name":name,"old_password":oldword,"new_password":newword},
+			 success:  function(result){
+				if(result == "OK")
+				{   
+					if(user == name){
+					 alert("密码修改成功,请重新登录");
+					 window.location.assign("身份认证.html");
+					 }
+					 else
+					 alert("密码修改成功");
+				}
+			 },
+			 error:function(xhr){
+				alert(xhr);
+			 }
+			});
+			}
+		});
+			$("#chpower1").click(function(){
+			<!-- 点击之后获取所有用户名 -->
+			$.ajax({
+			type:"GET",
+			dataType:"json",
+			url:"http://101.132.126.248:8081/api/user/get_all_user_message",
+			success:function(result){
+				var length = Object.keys(result).length;
+				for(var i = 1;i<11;i++){
+					var list = "bname-list" + i; 
+					var obj = document.getElementById(list);
+					if(i<(length+1)){
+						obj.innerHTML = result[i-1].name;
+						obj.style.display = "block";
+					}
+					else{
+						obj.style.display = "none";
+					}
+				}
+				document.getElementById("bname-list").style.display= "block";
+			},
+			error:function(){
+			alert("error");
+			}
+			});
+		});
+		$("#bname-list1").click(function(){
+			blistclick(1);
+		});	
+		$("#bname-list2").click(function(){
+			blistclick(2);
+		});	
+		$("#bname-list3").click(function(){
+			blistclick(3);
+		});
+		$("#bname-list4").click(function(){
+			blistclick(4);
+		});	
+		$("#bname-list5").click(function(){
+			blistclick(5);
+		});	
+		$("#bname-list6").click(function(){
+			blistclick(6);
+		});	
+		$("#bname-list7").click(function(){
+			blistclick(7);
+		});	
+		$("#bname-list8").click(function(){
+			blistclick(8);
+		});	
+		$("#bname-list9").click(function(){
+			blistclick(9);
+		});		
+		$("#bname-list10").click(function(){
+			blistclick(10);
+		});
+		function blistclick(num){
+			var listnum = "bname-list" + num;
+			var name = document.getElementById(listnum).innerHTML;
+			document.getElementById("chpowername").value = name;
+			document.getElementById("bname-list").style.display= "none"	;	
+		}
+		$("#powerRadios1").click(function(){
+			changepower="2";
+		});
+		$("#powerRadios2").click(function(){
+			changepower="1";
+		});
+		$("#powerRadios3").click(function(){
+			changepower="0";
+		});
+		$("#btn-chpower").click(function(){
+			var powername = document.getElementById("chpowername").value;
+			<!-- ajax发送 -->
+			if(powername.length == 0)
+				alert("请选择用户");
+			else{
+			$.ajax({
+				type:"POST",
+				dataType:"text",
+				url:"http://101.132.126.248:8081/api/user/change_power",
+				data:{"name":powername,"power":changepower},
+				success: function(result){
+					if(result == "OK")
+						alert("修改成功");
+				},
+				error: function(){
+					alert("error");
+				}
+			});
+			}
+		});
+		});
+	</script>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=none">
+<title>地图选择</title>
+<!-- 引入CSS -->
+<link rel="stylesheet"  href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<link rel="stylesheet"  href="bootstrap-3.3.7-dist/css/bootstrapValidator.min.css">
+<!-- 引入jS 在这之前先运行jquery-->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script  src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script  src="bootstrap-3.3.7-dist/js/bootstrapValidator.min.js"></script>	
+<script src="http://api.map.baidu.com/api?v=2.0&ak=A1LU7iHS0avqQwPLAxbhKn0UYSQCuRVH"></script>
+<script src="bootstrap-3.3.7-dist/js/jquery.baiduMap.min.js"></script>
+<style>
+* { margin: 0; padding: 0; }
+a { text-decoration: none; }
+ul { list-style: none; }
+body,  html { height: 100%; font-family: "微软雅黑"; }
+.box { width: 100%; height: 600px; margin: 40px 0; }
+#container1,  #container2 { width: 100%; height: 100%; }
+#container3 { width: 80%; height: 100%; }
+.list { width: 20%; height: 100%; background: #eee; }
+.list li { height: 34px; line-height: 34px; padding-left: 20px; }
+.list li.active a { color: red; }
+.title { font-size: 14px; font-weight: bold; color: #cc5522; }
+.content { font-size: 13px; color: #333; margin-top: 6px; }
+.fl { float: left; }
+</style>
+</head>
+
+<body onload="passvalue()">
+
+<div class="box">
+	<div id="container3" class="container fl"></div>
+	<ol class="list fl">
+		<li><h4>请从列表中选择设备地点</h4> </li>
+		<li> <a href="控制页面1.html" id="a1">1.江苏苏港和顺生物科技有限公司</a> </li>
+		<li> <a href="javascript:void(0)" >2.其他...</a> </li>
+	</ol>
+</div>
+<div class="box">
+	<div id="container1"></div>
+</div>
+<div class="box">
+	<div id="container2"></div>
+</div>
+
+<script type="text/javascript">
+var points = [{
+	id: 2,
+	lng: 120.791292,
+	lat: 33.183585 ,
+	title: "苏港和顺生物科技有限公司",
+	content: ["地址：盐城大丰市大丰港华丰农场东门北侧", "电话：110"]
+}];
+
+new BaiduMap({
+	id: "container1",
+	level: 5,
+	titleClass: "title",
+	contentClass: "content",
+	centerPoint: { // 地图中心点经纬度
+		lng: 100.106586,
+		lat: 38.467207
+	},
+	index: -1,
+	points: points,
+	showLabel: true
+});
+
+new BaiduMap({
+	id: "container2",
+	level: 5,
+	type: ["地图"],
+	width: 320,
+	height: 70,
+	titleClass: "title",
+	contentClass: "content",
+	showMarkPanorama: true,
+	mapStyle: "light",
+	icon: {
+		url: "背景图/marker.png",
+		width: 25,
+		height: 96
+	},
+	centerPoint: { // 地图中心点经纬度
+		lng: 100.106586,
+		lat: 38.467207
+	},
+	index: 0,
+	points: points
+});
+
+var map = new BaiduMap({
+	id: "container3",
+	level: 5, //  选填--地图级别--(默认15)
+	zoom: true, // 选填--是否启用鼠标滚轮缩放功能--(默认false)
+	type: ["地图"], // 选填--显示地图类型--(默认不显示)
+	width: 320, // 选填--信息窗口width--(默认自动调整)
+	height: 70, // 选填--信息窗口height--(默认自动调整)
+	titleClass: "title",
+	contentClass: "content",
+	showPanorama: true, // 是否显示全景控件(默认false)
+	showMarkPanorama: true, // 是否显示标注点全景图(默认false)
+	showLabel: false, // 是否显示文本标注(默认false)
+	mapStyle: "normal", // 默认normal,可选dark,light
+	icon: { // 选填--自定义icon图标
+		url: "背景图/marker2.png",
+		width: 34,
+		height: 94
+	},
+	centerPoint: { // 中心点经纬度
+		lng: 100.106586,
+		lat: 38.467207
+	},
+	index: 3, // 开启对应的信息窗口，默认-1不开启
+	animate: true, // 是否开启坠落动画，默认false
+	points: points, // 标注点--id(唯一标识)
+	callback: function(id) {
+		$(".list").find("li").eq(id - 1).addClass("active").siblings().removeClass("active");
+	}
+});
+
+var data = map.getPosition();
+var $li = $(".list").find("li");
+
+$li.each(function(i) {
+	$(this).data("id", i + 1);
+}).on("click", function() {
+	map.openInfoWindow($(this).data("id"));
+	$(this).addClass("active").siblings().removeClass("active");
+}).eq(data.id - 1).addClass("active");
+
+<!-- 接收通过URL传递过来的用户密码 -->
+function passvalue(){
+	 var password = location.href;
+	 alert(password);
+	 password = password.split("?")[1];
+	 password = password.split("=")[1];	 
+	 var url = "控制页面1.html" + "?password=" + password;
+	 document.getElementById("a1").setAttribute("href",url);
+}
+</script>
+</body>
+</html>
