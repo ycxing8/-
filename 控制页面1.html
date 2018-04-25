@@ -15,20 +15,20 @@
 		<script  src="bootstrap-3.3.7-dist/js/bootstrapValidator.min.js"></script>		
 		<!-- 内部样式：背景图片 -->
 	</head>
-	<body onload="nameload()">
+	<body>
 	<nav  class="navbar navbar-default">
 		<ul class="nav nav-pills navbar-nav">
 		<li><a id="username">欢迎您:ro</a></li>
 		<li><a id="permission">您的权限:super</a></li>
 		<li class="dropdown">
-		<a class="dropdown-toggle" data-toggle="dropdown">管理<span class="caret"></span></a>
-		<ul class="dropdown-menu">
-			<li><a href="#">用户管理</a></li>
-			<li><a href="#">设备管理</a></li>		
-			<li><a href="#">设备监控</a></li>			
+		<a class="dropdown-toggle" data-toggle="dropdown" id="manage-list">管理<span class="caret"></span></a>
+		<ul class="dropdown-menu" id="hole-list" >
+			<li><a href="#" id="user-manage">用户管理</a></li>
+			<li><a href="#" id="device-manage">设备管理</a></li>		
+			<li><a href="#" id="device-look">设备监控</a></li>			
 		</ul>
 		</li>
-		<li><a href="#">退出登录</a></li>
+		<li><a href="#" id="exit">退出登录</a></li>
 		</ul>
 	</nav>
 	
@@ -143,25 +143,255 @@
                 </div>
 				<div  style="position: absolute; top:101%; left:81.2%;">
                     <p><label style="background-color:#00fa00" id="mo2-qs-p">121.1</label><small>Mpa</small></p>
-			</div>
+				</div>
+				<div  style="position: absolute; top:73%; left:16%;">
+                    <p><label style="background-color:#00fa00" id="m1-fre">121.1</label><small>Hz</small></p>
+				</div>
+				<div  style="position: absolute; top:72.3%; left:22.1%;">
+                    <p><label style="background-color:#00fa00" id="m2-fre">121.1</label><small>Hz</small></p>
+				</div>
+				<div  style="position: absolute; top:74.1%; left:57.7%;">
+                    <p><label style="background-color:#00fa00" id="m3-fre">121.1</label><small>Hz</small></p>
+				</div>
+				<div  style="position: absolute; top:75.3%; left:64.2%;">
+                    <p><label style="background-color:#00fa00" id="m4-fre">121.1</label><small>Hz</small></p>
+				</div>
 		</div>
 	</div>
 	</div>
 	</body>
 	<script>
-	function nameload(){
-	$.ajax({
+	$(document).ready(function(){
+		setInterval(flush,4000);
+		<!-- 获取用户名和权限 -->
+		$.ajax({
 		type:"GET",
 		url:"http://101.132.126.248:8081/api/user/get_my_message",
 		dataType:"json",
 		success: function(result){
 			document.getElementById("username").innerHTML = "欢迎您:"+result.name;
-			document.getElementById("permission").innerHTML = "您的权限:"+result.name;			
+			document.getElementById("permission").innerHTML = "您的权限:"+result.power;	
 		},
 		error:function(){
 		alert("登录异常")
 		}
 	});
-	}
+		<!-- 权限管理 -->
+		$("#manage-list").click(function(){
+			var power = document.getElementById("permission").innerHTML.split(":")[1];
+			if(power == "admin");
+			else{
+				document.getElementById("hole-list").style.display="none";
+				alert("您没有管理员权限");
+				}
+		});
+		<!-- 下拉列表 -->
+		$("#user-manage").click(function(){
+			var name = document.getElementById("username").innerHTML;
+			name = name.split(":")[1];
+			url = "用户管理.html" + "?name=";
+			url += name;
+			window.open(url);
+		});
+		<!-- 退出登录 -->
+		$("#exit").click(function(){
+			$.ajax({
+				type:"GET",
+				dataType:"text",
+				url:"http://101.132.126.248:8081/api/user/login_out",
+				success:function(result){
+					if(result == "OK"){
+						alert("退出成功");
+						window.location.assign("身份认证.html");
+					}
+					else {alert("服务器异常"); }
+				},
+				error:function(){
+					alert("退出失败");
+				}
+			});
+		});
+		<!-- 刷新数据函数 -->
+		function flush(){
+			$.ajax({
+				type:"POST",
+				dataType:"json",
+				url:"http://101.132.126.248:8081/api/component/get_by_machine_identifier",
+				data:{"machine_identifier":"01"},
+				success: function(result){
+					var num = Object.keys(result).length;
+					for(var i=0;i<num;i++){
+						var cell = result[i];
+						if(cell.pk.identifier == "F1")
+							document.getElementById("m1-out-flow").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "F2")
+							document.getElementById("m2-out-flow").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "F3")
+							document.getElementById("mo1-qs-flow").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "F4")
+							document.getElementById("yd-back-flow").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "F5")
+							document.getElementById("yd-layout-flow").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "F6")
+							document.getElementById("m3-out-flow").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "F7")
+							document.getElementById("m4-out-flow").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "F8")
+							document.getElementById("mo2-qs-flow").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "F9")
+							document.getElementById("ed-back-flow").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "F10")
+							document.getElementById("ed-layout-flow").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "F11")
+							document.getElementById("yd-enter-flow").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "F12")
+							document.getElementById("mo1-out-flow").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "F13")
+							document.getElementById("mo2-out-flow").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "P1")
+							document.getElementById("m2-out-p").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "P2")
+							document.getElementById("mo1-out-p").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "P3")
+							document.getElementById("mo1-qs-p").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "P4")
+							document.getElementById("m4-out-p").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "P5")
+							document.getElementById("mo2-out-p").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "P6")
+							document.getElementById("mo2-qs-p").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "L1");
+							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
+						else if(cell.pk.identifier == "L2");
+							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
+						else if(cell.pk.identifier == "L3");
+							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
+						else if(cell.pk.identifier == "L4");
+							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
+						else if(cell.pk.identifier == "T1")
+							document.getElementById("m2-out-T").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "T2")
+							document.getElementById("m4-out-T").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "T3");
+							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
+						else if(cell.pk.identifier == "KGF1");
+								<!-- if(cell.status == "N") -->
+									<!-- document.getElementById("kgf") -->
+						else if(cell.pk.identifier == "KGF2");
+							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
+						else if(cell.pk.identifier == "KGF3")
+						{
+								if(cell.status == "N")
+									document.getElementById("kgf3-state").style.background="red";
+								else
+									document.getElementById("kgf3-state").style.background="#00fa00";
+						}
+						else if(cell.pk.identifier == "KGF4");
+							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
+						else if(cell.pk.identifier == "KGF5");
+							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
+						else if(cell.pk.identifier == "KGF6"){
+							if(cell.status == "N")
+								document.getElementById("kgf6-state").style.background = "red";
+							else
+								document.getElementById("kgf6-state").style.background = "#00fa00";
+							}
+						else if(cell.pk.identifier == "KGF7");
+							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
+						else if(cell.pk.identifier == "KGF8");
+							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
+						else if(cell.pk.identifier == "KGF9");
+							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
+						else if(cell.pk.identifier == "TJF1"){
+							if(cell.status == "N")
+								document.getElementById("tjf1-state").style.background = "red";
+							else
+								document.getElementById("tjf1-state").style.background = "#00fa00";
+							}
+						else if(cell.pk.identifier == "TJF2"){
+								if(cell.status == "N")
+									document.getElementById("tjf2-state").style.background = "red";
+								else
+									document.getElementById("tjf2-state").style.background = "#00fa00";
+							}
+						else if(cell.pk.identifier == "TJF3"){
+							if(cell.status == "N")
+								document.getElementById("tjf3-state").style.background = "red";
+							else
+								document.getElementById("tjf3-state").style.background = "#00fa00";
+							}
+						else if(cell.pk.identifier == "TJF4"){
+							if(cell.status == "N")
+								document.getElementById("tjf4-state").style.background = "red";
+							else
+								document.getElementById("tjf4-state").style.background = "#00fa00";
+							}
+						else if(cell.pk.identifier == "TJF5"){
+							if(cell.status == "N")
+								document.getElementById("tjf5-state").style.background = "red";
+							else
+								document.getElementById("tjf5-state").style.background = "#00fa00";
+							}
+						else if(cell.pk.identifier == "TJF6"){
+								if(cell.status == "N")
+									document.getElementById("tjf6-state").style.background = "red";
+								else
+									document.getElementById("tjf6-state").style.background = "#00fa00";
+							}
+						else if(cell.pk.identifier == "TJF7"){
+							if(cell.status == "N")
+								document.getElementById("tjf7-state").style.background = "red";
+							else
+								document.getElementById("tjf7-state").style.background = "#00fa00";
+							}
+						else if(cell.pk.identifier == "TJF8"){
+							if(cell.status == "N")
+								document.getElementById("tjf8-state").style.background = "red";
+							else
+								document.getElementById("tjf8-state").style.background = "#00fa00";
+							}
+						else if(cell.pk.identifier == "M1"){
+							if(cell.status == "N")
+								document.getElementById("m1-state").style.background = "red";
+							else
+								document.getElementById("m1-state").style.background = "#00fa00";
+							document.getElementById("m1-fre").innerHTML = cell.realTimeData; 
+							}
+						else if(cell.pk.identifier == "M2"){
+								if(cell.status == "N")
+									document.getElementById("m2-state").style.background = "red";
+								else
+									document.getElementById("m2-state").style.background = "#00fa00";
+								document.getElementById("m2-fre").innerHTML = cell.realTimeData;
+							}
+						else if(cell.pk.identifier == "M3"){
+							if(cell.status == "N")
+								document.getElementById("m3-state").style.background = "red";
+							else
+								document.getElementById("m3-state").style.background = "#00fa00";
+							document.getElementById("m3-fre").innerHTML = cell.realTimeData;
+							}
+						else if(cell.pk.identifier == "M4"){
+							if(cell.status == "N")
+								document.getElementById("m4-state").style.background = "red";
+							else
+								document.getElementById("m4-state").style.background = "#00fa00";
+							document.getElementById("m4-fre").innerHTML = cell.realTimeData;
+							}
+						<!-- else if(cell.pk.identifier == "M5"){ -->
+							<!-- if(cell.status == "N") -->
+								<!-- document.getElementById("m5-state").style.background = "red"; -->
+							<!-- else -->
+								<!-- document.getElementById("m5-state").style.background = "#00fa00"; -->
+							<!-- } -->
+						else ;
+					}
+				},
+				error: function(){
+					alert("数据获取失败");
+				}
+			});
+		}
+	});
 	</script>
 </html>

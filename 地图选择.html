@@ -137,7 +137,6 @@ $li.each(function(i) {
 <!-- 接收通过URL传递过来的用户密码 -->
 function passvalue(){
 	 var password = location.href;
-	 alert(password);
 	 password = password.split("?")[1];
 	 password = password.split("=")[1];	 
 	 var url = "控制页面1.html" + "?password=" + password;
