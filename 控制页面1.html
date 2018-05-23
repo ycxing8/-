@@ -35,10 +35,12 @@
 	
 	
 	<!-- 插入图片 -->
+<div class="content">
+	<div id="con1">
 	<div class = "container">
 		<div class="row">
 			<div class="col-sm-12 col-md-12 col-lg-12">
-			<img class="img-responsive" src="背景图/process.jpg" />
+			<img class="img-responsive" src="背景图/process.jpg" id="img-process" usemap ="#processmap" />
 			    <div  style="position: absolute; top:10%; left: 1%;">
                     <p><label style="background-color:#00fa00" id="yd-enter-flow">121.1</label><small>M3/h</small></p>
                 </div>
@@ -73,46 +75,70 @@
                     <p><label style="background-color:#00fa00" id="mo1-qs-p">121.1</label><small>Mpa</small></p>
                 </div>
 				<div  style="position: absolute; top:80.6%; left:15%;">
-                    <label style="background-color:#ff0000;width:16px;height:16px;-webkit-border-radius:8px" id="m1-state"></label>
+                    <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="m1-state"></label>
                 </div>
 				<div  style="position: absolute; top:54.5%; left:16.3%;">
-                    <label style="background-color:#ff0000;width:16px;height:16px;-webkit-border-radius:8px" id="tjf1-state"></label>
+                    <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="tjf1-state"></label>
+                </div>
+				<div  style="position: absolute; top:49.5%; left:16%;">
+                    <small><p><label style="background-color:#00fa00" id="tjf1-kd">121.1</label>%</p></small>
                 </div>
 				<div  style="position: absolute; top:8.9%; left:12.3%;">
-                    <label style="background-color:#ff0000;width:16px;height:16px;-webkit-border-radius:8px" id="tjf3-state"></label>
+                    <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="tjf3-state"></label>
+                </div>
+				<div  style="position: absolute; top:3.9%; left:12.3%;">
+                    <small><p><label style="background-color:#00fa00" id="tjf3-kd">121.1</label>%</p></small>
                 </div>
 				<div  style="position: absolute; top:26.5%; left:23.7%;">
-                    <label style="background-color:#ff0000;width:16px;height:16px;-webkit-border-radius:8px" id="tjf2-state"></label>
+                    <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="tjf2-state"></label>
+                </div>
+				<div  style="position: absolute; top:21.5%; left:23.7%;">
+                    <small><p><label style="background-color:#00fa00" id="tjf2-kd">121.1</label>%</p></small>
                 </div>
 				<div  style="position: absolute; top:8.9%; left:34.7%;">
-                    <label style="background-color:#ff0000;width:16px;height:16px;-webkit-border-radius:8px" id="tjf4-state"></label>
+                    <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="tjf4-state"></label>
+                </div>
+				<div  style="position: absolute; top:3.9%; left:34.7%;">
+                    <small><p><label style="background-color:#00fa00" id="tjf4-kd">121.1</label>%</p></small>
                 </div>
 				<div  style="position: absolute; top:82.7%; left:21.7%;">
-                    <label style="background-color:#ff0000;width:16px;height:16px;-webkit-border-radius:8px" id="m2-state"></label>
+                    <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="m2-state"></label>
                 </div>
 				<div  style="position: absolute; top:85%; left:43%;">
-                    <label style="background-color:#ff0000;width:16px;height:16px;-webkit-border-radius:8px" id="kgf3-state"></label>
+                    <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="kgf3-state"></label>
                 </div>
 				<div  style="position: absolute; top:8.9%; left:54.2%;">
-                    <label style="background-color:#ff0000;width:16px;height:16px;-webkit-border-radius:8px" id="tjf7-state"></label>
+                    <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="tjf7-state"></label>
+                </div>
+				<div  style="position: absolute; top:3.9%; left:54.1%;">
+                    <small><p><label style="background-color:#00fa00" id="tjf7-kd">121.1</label>%</p></small>
                 </div>
 				<div  style="position: absolute; top:8.9%; left:76.7%;">
-                    <label style="background-color:#ff0000;width:16px;height:16px;-webkit-border-radius:8px" id="tjf8-state"></label>
+                    <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="tjf8-state"></label>
+                </div>
+				<div  style="position: absolute; top:3.9%; left:76.7%;">
+                    <small><p><label style="background-color:#00fa00" id="tjf8-kd">121.1</label>%</p></small>
                 </div>
 				<div  style="position: absolute; top:56.1%; left:58.3%;">
-                    <label style="background-color:#ff0000;width:16px;height:16px;-webkit-border-radius:8px" id="tjf5-state"></label>
+                    <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="tjf5-state"></label>
+                </div>
+				<div  style="position: absolute; top:51.1%; left:58.3%;">
+                    <small><p><label style="background-color:#00fa00" id="tjf5-kd">121.1</label>%</p></small>
                 </div>
 				<div  style="position: absolute; top:28.4%; left:66%;">
-                    <label style="background-color:#ff0000;width:16px;height:16px;-webkit-border-radius:8px" id="tjf6-state"></label>
+                    <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="tjf6-state"></label>
+                </div>
+				<div  style="position: absolute; top:23.4%; left:66%;">
+                    <small><p><label style="background-color:#00fa00" id="tjf6-kd">121.1</label>%</p></small>
                 </div>
 				<div  style="position: absolute; top:85.6%; left:85.8%;">
-                    <label style="background-color:#ff0000;width:16px;height:16px;-webkit-border-radius:8px" id="kgf6-state"></label>
+                    <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="kgf6-state"></label>
                 </div>
 				<div  style="position: absolute; top:82.4%; left:57.6%;">
-                    <label style="background-color:#ff0000;width:16px;height:16px;-webkit-border-radius:8px" id="m3-state"></label>
+                    <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="m3-state"></label>
                 </div>
 				<div  style="position: absolute; top:85.2%; left:64.3%;">
-                    <label style="background-color:#ff0000;width:16px;height:16px;-webkit-border-radius:8px" id="m4-state"></label>
+                    <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="m4-state"></label>
                 </div>
 				<div  style="position: absolute; top:23.7%; left:73.2%;">
                     <p><label style="background-color:#00fa00" id="ed-back-flow">121.1</label><small>M3/h</small></p>
@@ -156,31 +182,241 @@
 				<div  style="position: absolute; top:75.3%; left:64.2%;">
                     <p><label style="background-color:#00fa00" id="m4-fre">121.1</label><small>Hz</small></p>
 				</div>
-				<!-- 产量信息 -->
-			<!-- <button data-toggle="modal" data-target="#modal1" class="btn btn-default" data-keyboard="true">产量信息</button> -->
-			<!-- <div class="modal fade" id="modal1"> -->
-				<!-- <div class="modal-dialog"> -->
-				<!-- <div class="modal-content"> -->
-				<!-- <div class="modal-header"> -->
-				<!-- <h4 class="modal-title">产量信息</h4> -->
-				<!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-				<!-- </div> -->
-				<!-- <div class="modal-body"> -->
-				<!-- <p>这里面是内容</p> -->
-				<!-- </div> -->
-				<!-- <div class="modal-footer"> -->
-				<!-- <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button> -->
-				<!-- </div> -->
-				<!-- </div> -->
-				<!-- </div> -->
-			<!-- </div> -->
+
 		</div>
 	</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-1 col-md-1">
+			<!-- 产量信息 -->
+			<button data-toggle="modal" data-target="#modal2" class="btn btn-info" data-keyboard="true">设备描述</button>
+			<div class="modal fade" id="modal2">
+				<div class="modal-dialog">
+				<div class="modal-content">
+				<div class="modal-header">
+				<h4 class="modal-title">设备信息</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+				<p><strong>序号：</strong><span id="p-id">01</span></p>
+				<p><strong>编号：</strong><span id="p-id2">01</span></p>		
+				<p><strong>名称：</strong><span id="p-name">01</span></p>
+				<p><strong>地点：</strong><span id="p-place">01</span></p>	
+				<p><strong>描述：</strong><span id="p-descript">01</span></p>	
+				<p><strong>图片路径：</strong><span id="p-path">01</span></p>
+				<p><strong>认证码：</strong><span id="p-conid">01</span></p>
+				<p><strong>状态：</strong><span id="p-state">01</span></p>
+				<p><strong>上次在线时间：</strong><span id="p-onlineT">01</span></p>
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+				</div>
+				</div>
+				</div>
+			</div>
+			</div>
+			<div class="col-lg-1 col-md-1">
+			<!-- 产量信息 -->
+			<button data-toggle="modal" data-target="#modal1" class="btn btn-info" data-keyboard="true">产量信息</button>
+			<div class="modal fade" id="modal1">
+				<div class="modal-dialog">
+				<div class="modal-content">
+				<div class="modal-header">
+				<h4 class="modal-title">产量信息</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+				<table class="table table-bordered table-hover table-responsive">
+				<tr class="info">
+				<td>名称</td>
+				<td>数值(单位M3)</td>
+				</tr>
+				<tr><td>一段总进料量</td><td id="td-1">20</td></tr>
+				<tr><td>一段总产水量</td><td id="td-2">20</td></tr>
+				<tr><td>一段单次进料量</td><td id="td-3">20</td></tr>
+				<tr><td>一段单次出水量</td><td id="td-4">20</td></tr>
+				<tr><td>二段总进料量</td><td id="td-5">20</td></tr>
+				<tr><td>二段总产水量</td><td id="td-6">20</td></tr>
+				<tr><td>二段单次进料量</td><td id="td-7">20</td></tr>
+				<tr><td>二段单次出水量</td><td id="td-8">20</td></tr>
+				</table>
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+				</div>
+				</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div id="con2" style="display: none">
+		<div class="container">
+		<div class="row">
+		<div class="col-lg-12 col-md-12">
+			<img class="img-responsive" src="背景图/清洗.jpg" usemap ="#qsmap" id="img-qs" />
+			<div  style="position: absolute; top:31.8%; left:6.1%;">
+                <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="qskgf9-state"></label>
+             </div>
+			 <div  style="position: absolute; top:30.8%; left:15.1%;">
+                <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="qskgf5-state"></label>
+             </div>
+			 <div  style="position: absolute; top:71.9%; left:19.0%;">
+                <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="qskgf1-state"></label>
+             </div>
+			 <div  style="position: absolute; top:53.9%; left:26.0%;">
+                <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="qstjf2-state"></label>
+             </div>
+			  <div  style="position: absolute; top:67%; left:42.3%;">
+                <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="qskgf4-state"></label>
+             </div>
+			 <div  style="position: absolute; top:81.7%; left:13.8%;">
+                <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="ydm5-state"></label>
+             </div>
+			 <div  style="position: absolute; top:82.4%; left:28.3%;">
+                <p><label style="background-color:#00fa00" id="ydm5-out-flow">121.1</label><small>M3/h</small></p>
+             </div>
+			  <div  style="position: absolute; top:87.4%; left:28.3%;">
+                <p><label style="background-color:#00fa00" id="ydm5-out-p">121.1</label><small>Mpa</small></p>
+             </div>
+			 <div  style="position: absolute; top:92.4%; left:28.3%;">
+                <p><label style="background-color:#00fa00" id="ydm5-out-T">121.1</label><small>度</small></p>
+             </div>
+			 <div  style="position: absolute; top:53.2%; left:20.23%;">
+                <p><label style="background-color:#00fa00" id="F12">121.1</label><small>M3/h</small></p>
+             </div>
+			 <div  style="position: absolute; top:58.2%; left:20.23%;">
+                <p><label style="background-color:#00fa00" id="P2">121.1</label><small>Mpa</small></p>
+             </div>
+			 <div  style="position: absolute; top:31.8%; left:20.23%;">
+                <p><label style="background-color:#00fa00" id="F4">121.1</label><small>M3/h</small></p>
+             </div>
+			  <div  style="position: absolute; top:80%; left:41.3%;">
+                <p><label style="background-color:#00fa00" id="F3">121.1</label><small>M3/h</small></p>
+             </div>
+			 <div  style="position: absolute; top:85%; left:41.3%;">
+                <p><label style="background-color:#00fa00" id="P3">121.1</label><small>Mpa</small></p>
+             </div>
+			 <!-- 二段 -->
+			 <div  style="position: absolute; top:31.8%; left:55.1%;">
+                <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="qskgf92-state"></label>
+             </div>
+			 <div  style="position: absolute; top:30.8%; left:64.8%;">
+                <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="qskgf8-state"></label>
+             </div>
+			 <div  style="position: absolute; top:71.9%; left:68.7%;">
+                <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="qskgf2-state"></label>
+             </div>
+			 <div  style="position: absolute; top:53.9%; left:76.0%;">
+                <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="qstjf6-state"></label>
+             </div>
+			  <div  style="position: absolute; top:67%; left:93.3%;">
+                <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="qskgf7-state"></label>
+             </div>
+			 <div  style="position: absolute; top:81.7%; left:62.8%;">
+                <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="edm5-state"></label>
+             </div>
+			 <div  style="position: absolute; top:82.4%; left:77.3%;">
+                <p><label style="background-color:#00fa00" id="edm5-out-flow">121.1</label><small>M3/h</small></p>
+             </div>
+			  <div  style="position: absolute; top:87.4%; left:77.3%;">
+                <p><label style="background-color:#00fa00" id="edm5-out-p">121.1</label><small>Mpa</small></p>
+             </div>
+			 <div  style="position: absolute; top:92.4%; left:77.3%;">
+                <p><label style="background-color:#00fa00" id="edm5-out-T">121.1</label><small>度</small></p>
+             </div>
+			 <div  style="position: absolute; top:53.2%; left:69.23%;">
+                <p><label style="background-color:#00fa00" id="F13">121.1</label><small>M3/h</small></p>
+             </div>
+			 <div  style="position: absolute; top:58.2%; left:69.23%;">
+                <p><label style="background-color:#00fa00" id="P5">121.1</label><small>Mpa</small></p>
+             </div>
+			 <div  style="position: absolute; top:31.8%; left:69.23%;">
+                <p><label style="background-color:#00fa00" id="F9">121.1</label><small>M3/h</small></p>
+             </div>
+			  <div  style="position: absolute; top:80%; left:90.3%;">
+                <p><label style="background-color:#00fa00" id="F8">121.1</label><small>M3/h</small></p>
+             </div>
+			 <div  style="position: absolute; top:85%; left:90.3%;">
+                <p><label style="background-color:#00fa00" id="P6">121.1</label><small>Mpa</small></p>
+             </div>
+			  <div  style="position: absolute; top:73.6%; left:12.8%;">
+                <p><label style="background-color:#00fa00" id="m5-fre">121.1</label><small>Hz</small></p>
+             </div>
+			 <div  style="position: absolute; top:72.8%; left:62.6%;">
+                <p><label style="background-color:#00fa00" id="m5-fre2">121.1</label><small>Hz</small></p>
+             </div>
+		</div>
+		</div>
+		</div>
+	</div>
+</div>
+		<ul class="pager" style="position: absolute; top:90%; left:50%;">
+		<li><a href="#" id="cs-ns">浓缩</a></li>
+		<li><a href="#" id="cs-qx">清洗</a></li>
+		</ul>
+	<!-- 浓缩区域定位 -->
+	<map name="processmap">
+	<area shape="rect"  href="#modal3"  id="area-1" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-2" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-3" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-4" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-5" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-6" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-7" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-8" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-9" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-10" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-11" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-12" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-13" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-14" data-toggle="modal" />
+	</map>
+	<map name="qsmap">
+	<area shape="rect"  href="#modal3"  id="area-15" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-16" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-17" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-18" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-19" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-20" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-21" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-22" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-23" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-24" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-25" data-toggle="modal" />
+	<area shape="rect"  href="#modal3"  id="area-26" data-toggle="modal" />
+	</map>
+	<div class="modal fade" id="modal3">
+				<div class="modal-dialog">
+				<div class="modal-content">
+				<div class="modal-header">
+				<h4 class="modal-title" id="conname"></h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+				<div id="kort">
+				<label id="valveorm">阀门开度:</label>
+				<input type="number" min="0" max="100" id="value"></input>
+				<button class="btn btn-warning" id="anochange">修改</button>
+				</div>
+				<div>
+					<label id="valveorm2">开关:</label>
+					<button class="btn btn-danger" id="digchange">开</button>
+				</div>
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+				</div>
+				</div>
 	</div>
 	</body>
 	<script>
 	$(document).ready(function(){
 		setInterval(flush,4000);
+		setInterval(imgscale,4000);
 		<!-- 获取用户名和权限 -->
 		$.ajax({
 		type:"GET",
@@ -194,6 +430,33 @@
 		alert("登录异常")
 		}
 	});
+	<!-- 获取设备描述 -->
+		$.ajax({
+			type:"GET",
+			dataType:"json",
+			url:"http://101.132.126.248:8081/api/machine/get_all",
+			success:function(result){
+				var num = Object.keys(result).length;
+				for(var i=0;i<num;i++){
+					var temp = result[i];
+				if(temp.identifier == "01"){
+					document.getElementById("p-id").innerHTML = temp.id;
+					document.getElementById("p-id2").innerHTML = temp.identifier;
+					document.getElementById("p-name").innerHTML = temp.name;
+					document.getElementById("p-place").innerHTML = temp.place;
+					document.getElementById("p-descript").innerHTML = temp.description;
+					document.getElementById("p-path").innerHTML = temp.imagePath;
+					document.getElementById("p-state").innerHTML = temp.status;
+					document.getElementById("p-onlineT").innerHTML = temp.lastOnlineTime;
+					document.getElementById("p-conid").innerHTML = temp.identityCode;
+				}
+				else ;
+				}
+			},
+			error:function(){
+				alert("获取设备信息失败");
+			}
+		});
 		<!-- 权限管理 -->
 		$("#manage-list").click(function(){
 			var power = document.getElementById("permission").innerHTML.split(":")[1];
@@ -242,42 +505,57 @@
 						var cell = result[i];
 						if(cell.pk.identifier == "F1")
 							document.getElementById("m1-out-flow").innerHTML = cell.realTimeData;
-						else if(cell.pk.identifier == "F2")
-							document.getElementById("m2-out-flow").innerHTML = cell.realTimeData;
-						else if(cell.pk.identifier == "F3")
-							document.getElementById("mo1-qs-flow").innerHTML = cell.realTimeData;
-						else if(cell.pk.identifier == "F4")
-							document.getElementById("yd-back-flow").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "F2"){
+							document.getElementById("ydm5-out-flow").innerHTML = cell.realTimeData;
+							document.getElementById("m2-out-flow").innerHTML = cell.realTimeData;}
+						else if(cell.pk.identifier == "F3"){
+							document.getElementById("F3").innerHTML = cell.realTimeData
+							document.getElementById("mo1-qs-flow").innerHTML = cell.realTimeData;}
+						else if(cell.pk.identifier == "F4"){
+							document.getElementById("F4").innerHTML = cell.realTimeData
+							document.getElementById("yd-back-flow").innerHTML = cell.realTimeData;}
 						else if(cell.pk.identifier == "F5")
 							document.getElementById("yd-layout-flow").innerHTML = cell.realTimeData;
 						else if(cell.pk.identifier == "F6")
 							document.getElementById("m3-out-flow").innerHTML = cell.realTimeData;
-						else if(cell.pk.identifier == "F7")
+						else if(cell.pk.identifier == "F7"){
+							document.getElementById("edm5-out-flow").innerHTML = cell.realTimeData;
 							document.getElementById("m4-out-flow").innerHTML = cell.realTimeData;
-						else if(cell.pk.identifier == "F8")
-							document.getElementById("mo2-qs-flow").innerHTML = cell.realTimeData;
-						else if(cell.pk.identifier == "F9")
-							document.getElementById("ed-back-flow").innerHTML = cell.realTimeData;
+							}
+						else if(cell.pk.identifier == "F8"){
+							document.getElementById("F8").innerHTML = cell.realTimeData
+							document.getElementById("mo2-qs-flow").innerHTML = cell.realTimeData;}
+						else if(cell.pk.identifier == "F9"){
+							document.getElementById("F9").innerHTML = cell.realTimeData
+							document.getElementById("ed-back-flow").innerHTML = cell.realTimeData;}
 						else if(cell.pk.identifier == "F10")
 							document.getElementById("ed-layout-flow").innerHTML = cell.realTimeData;
 						else if(cell.pk.identifier == "F11")
 							document.getElementById("yd-enter-flow").innerHTML = cell.realTimeData;
-						else if(cell.pk.identifier == "F12")
-							document.getElementById("mo1-out-flow").innerHTML = cell.realTimeData;
-						else if(cell.pk.identifier == "F13")
-							document.getElementById("mo2-out-flow").innerHTML = cell.realTimeData;
-						else if(cell.pk.identifier == "P1")
-							document.getElementById("m2-out-p").innerHTML = cell.realTimeData;
-						else if(cell.pk.identifier == "P2")
-							document.getElementById("mo1-out-p").innerHTML = cell.realTimeData;
-						else if(cell.pk.identifier == "P3")
-							document.getElementById("mo1-qs-p").innerHTML = cell.realTimeData;
-						else if(cell.pk.identifier == "P4")
-							document.getElementById("m4-out-p").innerHTML = cell.realTimeData;
-						else if(cell.pk.identifier == "P5")
-							document.getElementById("mo2-out-p").innerHTML = cell.realTimeData;
-						else if(cell.pk.identifier == "P6")
-							document.getElementById("mo2-qs-p").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "F12"){
+							document.getElementById("F12").innerHTML = cell.realTimeData
+							document.getElementById("mo1-out-flow").innerHTML = cell.realTimeData;}
+						else if(cell.pk.identifier == "F13"){
+							document.getElementById("F13").innerHTML = cell.realTimeData
+							document.getElementById("mo2-out-flow").innerHTML = cell.realTimeData;}
+						else if(cell.pk.identifier == "P1"){
+							document.getElementById("ydm5-out-p").innerHTML = cell.realTimeData;
+							document.getElementById("m2-out-p").innerHTML = cell.realTimeData;}
+						else if(cell.pk.identifier == "P2"){
+							document.getElementById("P2").innerHTML = cell.realTimeData
+							document.getElementById("mo1-out-p").innerHTML = cell.realTimeData;}
+						else if(cell.pk.identifier == "P3"){
+							document.getElementById("P3").innerHTML = cell.realTimeData
+							document.getElementById("mo1-qs-p").innerHTML = cell.realTimeData;}
+						else if(cell.pk.identifier == "P4"){
+							document.getElementById("edm5-out-p").innerHTML = cell.realTimeData;
+							document.getElementById("m4-out-p").innerHTML = cell.realTimeData;}
+						else if(cell.pk.identifier == "P5"){
+							document.getElementById("P5").innerHTML = cell.realTimeData
+							document.getElementById("mo2-out-p").innerHTML = cell.realTimeData;}
+						else if(cell.pk.identifier == "P6"){
+							document.getElementById("P6").innerHTML = cell.realTimeData
+							document.getElementById("mo2-qs-p").innerHTML = cell.realTimeData;}
 						else if(cell.pk.identifier == "L1");
 							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
 						else if(cell.pk.identifier == "L2");
@@ -286,17 +564,26 @@
 							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
 						else if(cell.pk.identifier == "L4");
 							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
-						else if(cell.pk.identifier == "T1")
-							document.getElementById("m2-out-T").innerHTML = cell.realTimeData;
-						else if(cell.pk.identifier == "T2")
-							document.getElementById("m4-out-T").innerHTML = cell.realTimeData;
+						else if(cell.pk.identifier == "T1"){
+							document.getElementById("ydm5-out-T").innerHTML = cell.realTimeData;
+							document.getElementById("m2-out-T").innerHTML = cell.realTimeData;}
+						else if(cell.pk.identifier == "T2"){
+							document.getElementById("edm5-out-T").innerHTML = cell.realTimeData;
+							document.getElementById("m4-out-T").innerHTML = cell.realTimeData;}
 						else if(cell.pk.identifier == "T3");
 							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
-						else if(cell.pk.identifier == "KGF1");
-								<!-- if(cell.status == "N") -->
-									<!-- document.getElementById("kgf") -->
-						else if(cell.pk.identifier == "KGF2");
-							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
+						else if(cell.pk.identifier == "KGF1"){
+								if(cell.status == "N")
+									document.getElementById("qskgf1-state").style.background="red";
+								else
+									document.getElementById("qskgf1-state").style.background="#00fa00";
+								}
+						else if(cell.pk.identifier == "KGF2"){
+								if(cell.status == "N")
+									document.getElementById("qskgf2-state").style.background="red";
+								else
+									document.getElementById("qskgf2-state").style.background="#00fa00";
+							}
 						else if(cell.pk.identifier == "KGF3")
 						{
 								if(cell.status == "N")
@@ -304,65 +591,103 @@
 								else
 									document.getElementById("kgf3-state").style.background="#00fa00";
 						}
-						else if(cell.pk.identifier == "KGF4");
-							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
-						else if(cell.pk.identifier == "KGF5");
-							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
+						else if(cell.pk.identifier == "KGF4"){
+							if(cell.status == "N")
+									document.getElementById("qskgf4-state").style.background="red";
+								else
+									document.getElementById("qskgf4-state").style.background="#00fa00";
+							}
+						else if(cell.pk.identifier == "KGF5"){
+							if(cell.status == "N")
+									document.getElementById("qskgf5-state").style.background="red";
+								else
+									document.getElementById("qskgf5-state").style.background="#00fa00";
+							}
 						else if(cell.pk.identifier == "KGF6"){
 							if(cell.status == "N")
 								document.getElementById("kgf6-state").style.background = "red";
 							else
 								document.getElementById("kgf6-state").style.background = "#00fa00";
 							}
-						else if(cell.pk.identifier == "KGF7");
-							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
-						else if(cell.pk.identifier == "KGF8");
-							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
-						else if(cell.pk.identifier == "KGF9");
-							<!-- document.getElementById("m1-out-flow").innerHTML = cell.realTimeData; -->
+						else if(cell.pk.identifier == "KGF7"){
+							if(cell.status == "N")
+									document.getElementById("qskgf7-state").style.background="red";
+								else
+									document.getElementById("qskgf7-state").style.background="#00fa00";
+							}
+						else if(cell.pk.identifier == "KGF8"){
+							if(cell.status == "N")
+									document.getElementById("qskgf8-state").style.background="red";
+								else
+									document.getElementById("qskgf8-state").style.background="#00fa00";
+							}
+						else if(cell.pk.identifier == "KGF9"){
+							if(cell.status == "N")
+							{
+								document.getElementById("qskgf9-state").style.background = "red";
+								document.getElementById("qskgf92-state").style.background = "red";
+								}
+							else{
+								document.getElementById("qskgf9-state").style.background = "#00fa00";
+								document.getElementById("qskgf92-state").style.background = "#00fa00";
+								}
+							}
 						else if(cell.pk.identifier == "TJF1"){
 							if(cell.status == "N")
 								document.getElementById("tjf1-state").style.background = "red";
 							else
 								document.getElementById("tjf1-state").style.background = "#00fa00";
+							document.getElementById("tjf1-kd").innerHTML = cell.realTimeData;
 							}
 						else if(cell.pk.identifier == "TJF2"){
-								if(cell.status == "N")
-									document.getElementById("tjf2-state").style.background = "red";
-								else
+								document.getElementById("tjf2-kd").innerHTML = cell.realTimeData;
+								if(cell.status == "N"){
+									document.getElementById("qstjf2-state").style.background = "red"
+									document.getElementById("tjf2-state").style.background = "red";}
+								else{
+									document.getElementById("qstjf2-state").style.background = "#00fa00"
 									document.getElementById("tjf2-state").style.background = "#00fa00";
+									}
 							}
 						else if(cell.pk.identifier == "TJF3"){
+							document.getElementById("tjf3-kd").innerHTML = cell.realTimeData;
 							if(cell.status == "N")
 								document.getElementById("tjf3-state").style.background = "red";
 							else
 								document.getElementById("tjf3-state").style.background = "#00fa00";
 							}
 						else if(cell.pk.identifier == "TJF4"){
+							document.getElementById("tjf4-kd").innerHTML = cell.realTimeData;
 							if(cell.status == "N")
 								document.getElementById("tjf4-state").style.background = "red";
 							else
 								document.getElementById("tjf4-state").style.background = "#00fa00";
 							}
 						else if(cell.pk.identifier == "TJF5"){
+							document.getElementById("tjf5-kd").innerHTML = cell.realTimeData;
 							if(cell.status == "N")
 								document.getElementById("tjf5-state").style.background = "red";
 							else
 								document.getElementById("tjf5-state").style.background = "#00fa00";
 							}
 						else if(cell.pk.identifier == "TJF6"){
-								if(cell.status == "N")
-									document.getElementById("tjf6-state").style.background = "red";
-								else
-									document.getElementById("tjf6-state").style.background = "#00fa00";
+							document.getElementById("tjf6-kd").innerHTML = cell.realTimeData;
+								if(cell.status == "N"){
+									document.getElementById("qstjf6-state").style.background = "red";
+									document.getElementById("tjf6-state").style.background = "red";}
+								else{
+									document.getElementById("qstjf6-state").style.background = "#00fa00";
+									document.getElementById("tjf6-state").style.background = "#00fa00";}
 							}
 						else if(cell.pk.identifier == "TJF7"){
+							document.getElementById("tjf7-kd").innerHTML = cell.realTimeData;
 							if(cell.status == "N")
 								document.getElementById("tjf7-state").style.background = "red";
 							else
 								document.getElementById("tjf7-state").style.background = "#00fa00";
 							}
 						else if(cell.pk.identifier == "TJF8"){
+							document.getElementById("tjf8-kd").innerHTML = cell.realTimeData;
 							if(cell.status == "N")
 								document.getElementById("tjf8-state").style.background = "red";
 							else
@@ -397,20 +722,396 @@
 							document.getElementById("m4-fre").innerHTML = cell.realTimeData;
 							}
 							
-						<!-- else if(cell.pk.identifier == "M5"){ -->
-							<!-- if(cell.status == "N") -->
-								<!-- document.getElementById("m5-state").style.background = "red"; -->
-							<!-- else -->
-								<!-- document.getElementById("m5-state").style.background = "#00fa00"; -->
-							<!-- } -->
+						else if(cell.pk.identifier == "M5"){
+							if(cell.status == "N")
+								{document.getElementById("ydm5-state").style.background = "red";
+									document.getElementById("edm5-state").style.background = "red";
+								}
+							else
+							{
+								document.getElementById("ydm5-state").style.background = "#00fa00";
+								document.getElementById("edm5-state").style.background = "#00fa00";
+								}
+								document.getElementById("m5-fre").innerHTML = cell.realTimeData;
+								document.getElementById("m5-fre2").innerHTML = cell.realTimeData;
+							}
+						else if(cell.pk.identifier == "SIF1"){
+							document.getElementById("td-1").innerHTML = cell.realTimeData;
+						}
+						else if(cell.pk.identifier == "SWF1"){
+							document.getElementById("td-2").innerHTML = cell.realTimeData;
+						}
+						else if(cell.pk.identifier == "PIF1"){
+							document.getElementById("td-3").innerHTML = cell.realTimeData;
+						}
+						else if(cell.pk.identifier == "PWF1"){
+							document.getElementById("td-4").innerHTML = cell.realTimeData;
+						}
+						else if(cell.pk.identifier == "SIF2"){
+							document.getElementById("td-5").innerHTML = cell.realTimeData;
+						}
+						else if(cell.pk.identifier == "SWF2"){
+							document.getElementById("td-6").innerHTML = cell.realTimeData;
+						}
+						else if(cell.pk.identifier == "PIF2"){
+							document.getElementById("td-7").innerHTML = cell.realTimeData;
+						}
+						else if(cell.pk.identifier == "PWF2"){
+							document.getElementById("td-8").innerHTML = cell.realTimeData;
+						}
 						else ;
 					}
 				},
-				error: function(){
-					alert("数据获取失败");
+				error: function(xmr){
+				for(i in xmr){
+				
+					alert(i+":"+xmr[i]);
+					}
 				}
 			});
 		}
+		<!-- 清洗浓缩切页 -->
+		$("#cs-ns").click(function(){
+			document.getElementById("con2").style.display = "none";
+			document.getElementById("con1").style.display = "block";
+		});
+		$("#cs-qx").click(function(){
+			document.getElementById("con1").style.display = "none";
+			document.getElementById("con2").style.display = "block";
+		});
+		<!-- 获取背景图的长和宽 动态标定map区域-->
+		function imgscale(){
+		<!-- 浓缩流程area定位 -->
+		var imgwidth= document.getElementById("img-process").width;
+		var imgheight = document.getElementById("img-process").height;
+		areascale(imgwidth,imgheight,0.1,0.1,0.145,0.2,"area-1");
+		areascale(imgwidth,imgheight,0.11,0.5,0.155,0.6,"area-2");
+		areascale(imgwidth,imgheight,0.13,0.78,0.168,0.88,"area-3");
+		areascale(imgwidth,imgheight,0.21,0.26,0.255,0.36,"area-4");
+		areascale(imgwidth,imgheight,0.2,0.80,0.245,0.89,"area-5");
+		areascale(imgwidth,imgheight,0.32,0.1,0.365,0.2,"area-6");
+		areascale(imgwidth,imgheight,0.387,0.81,0.432,0.91,"area-7");
+		areascale(imgwidth,imgheight,0.54,0.1,0.585,0.2,"area-8");
+		areascale(imgwidth,imgheight,0.54,0.5,0.595,0.6,"area-9");
+		areascale(imgwidth,imgheight,0.57,0.78,0.61,0.88,"area-10");
+		areascale(imgwidth,imgheight,0.64,0.26,0.7,0.36,"area-11");
+		areascale(imgwidth,imgheight,0.63,0.80,0.7,0.89,"area-12");
+		areascale(imgwidth,imgheight,0.75,0.1,0.8,0.2,"area-13");
+		areascale(imgwidth,imgheight,0.85,0.81,0.9,0.91,"area-14");
+		<!-- 清洗流程area定位 -->
+		var imgw = document.getElementById("img-qs").width;
+		var imgh = document.getElementById("img-qs").height;
+		areascale(imgw,imgh,0.02,0.3,0.066,0.4,"area-15");
+		areascale(imgw,imgh,0.13,0.3,0.175,0.4,"area-16");
+		areascale(imgw,imgh,0.11,0.78,0.155,0.88,"area-17");
+		areascale(imgw,imgh,0.17,0.70,0.21,0.80,"area-18");
+		areascale(imgw,imgh,0.24,0.53,0.28,0.63,"area-19");
+		areascale(imgw,imgh,0.4,0.68,0.445,0.78,"area-20");
+		areascale(imgw,imgh,0.52,0.3,0.56,0.4,"area-21");
+		areascale(imgw,imgh,0.64,0.3,0.68,0.4,"area-22");
+		areascale(imgw,imgh,0.62,0.78,0.66,0.88,"area-23");
+		areascale(imgw,imgh,0.67,0.75,0.71,0.85,"area-24");
+		areascale(imgw,imgh,0.75,0.55,0.79,0.65,"area-25");
+		areascale(imgw,imgh,0.93,0.68,0.98,0.78,"area-26");
+		}
+		function areascale(width,height,a,b,c,d,e){
+			var x1=width*a;
+			var y1=height*b;
+			var x2=width*c;
+			var y2=height*d;
+			var scale = x1+","+y1+","+x2+","+y2;
+			var coord = document.getElementById(e).coords=scale;
+		}
+		<!-- 点击area进行控制 -->
+		$("#area-1").click(function(){
+			document.getElementById("value").value = document.getElementById("tjf3-kd").innerHTML;
+			document.getElementById("kort").style.display = "block";
+			document.getElementById("conname").innerHTML = "TJF3";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("tjf3-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-2").click(function(){
+			document.getElementById("value").value = document.getElementById("tjf1-kd").innerHTML;
+			document.getElementById("kort").style.display = "block";
+			document.getElementById("conname").innerHTML = "TJF1";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("tjf1-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-3").click(function(){
+			document.getElementById("value").value = document.getElementById("m1-fre").innerHTML;
+			document.getElementById("kort").style.display = "block";
+			document.getElementById("conname").innerHTML = "M1";
+			document.getElementById("valveorm").innerHTML = "泵频率";
+			document.getElementById("value").max = "50";
+			if(document.getElementById("m1-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-4").click(function(){
+			document.getElementById("value").value = document.getElementById("tjf2-kd").innerHTML;
+			document.getElementById("kort").style.display = "block";
+			document.getElementById("conname").innerHTML = "TJF2";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("tjf2-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-5").click(function(){
+			document.getElementById("value").value = document.getElementById("m2-fre").innerHTML;
+			document.getElementById("kort").style.display = "block";
+			document.getElementById("conname").innerHTML = "M2";
+			document.getElementById("valveorm").innerHTML = "泵频率";
+			document.getElementById("value").max = "50";
+			if(document.getElementById("m2-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-6").click(function(){
+			document.getElementById("value").value = document.getElementById("tjf4-kd").innerHTML;
+			document.getElementById("kort").style.display = "block";
+			document.getElementById("conname").innerHTML = "TJF4";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("tjf4-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-7").click(function(){
+			document.getElementById("kort").style.display = "none";
+			document.getElementById("conname").innerHTML = "KGF3";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("kgf3-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-8").click(function(){
+			document.getElementById("kort").style.display = "block";
+			document.getElementById("conname").innerHTML = "TJF7";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("tjf7-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-9").click(function(){
+			document.getElementById("value").value = document.getElementById("tjf5-kd").innerHTML;
+			document.getElementById("kort").style.display = "block";
+			document.getElementById("conname").innerHTML = "TJF5";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("tjf5-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-10").click(function(){
+			document.getElementById("value").value = document.getElementById("m3-fre").innerHTML;
+			document.getElementById("kort").style.display = "block";
+			document.getElementById("conname").innerHTML = "M3";
+			document.getElementById("valveorm").innerHTML = "泵频率";
+			document.getElementById("value").max = "50";
+			if(document.getElementById("m3-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-11").click(function(){
+			document.getElementById("value").value = document.getElementById("tjf6-kd").innerHTML;
+			document.getElementById("kort").style.display = "block";
+			document.getElementById("conname").innerHTML = "TJF6";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("tjf6-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-12").click(function(){
+			document.getElementById("value").value = document.getElementById("m4-fre").innerHTML;
+			document.getElementById("kort").style.display = "block";
+			document.getElementById("conname").innerHTML = "M4";
+			document.getElementById("valveorm").innerHTML = "泵频率";
+			document.getElementById("value").max = "50";
+			if(document.getElementById("m4-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-13").click(function(){
+			document.getElementById("value").value = document.getElementById("tjf8-kd").innerHTML;
+			document.getElementById("kort").style.display = "block";
+			document.getElementById("conname").innerHTML = "TJF8";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("tjf8-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-14").click(function(){
+			document.getElementById("kort").style.display = "none";
+			document.getElementById("conname").innerHTML = "KGF6";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("kgf6-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-15").click(function(){
+			document.getElementById("kort").style.display = "none";
+			document.getElementById("conname").innerHTML = "KGF9";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("qskgf9-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-16").click(function(){
+			document.getElementById("kort").style.display = "none";
+			document.getElementById("conname").innerHTML = "KGF5";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("qskgf5-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-17").click(function(){
+			document.getElementById("value").value = document.getElementById("m5-fre").innerHTML;
+			document.getElementById("kort").style.display = "block";
+			document.getElementById("conname").innerHTML = "M5";
+			document.getElementById("valveorm").innerHTML = "电机频率";
+			document.getElementById("value").max = "50";
+			if(document.getElementById("ydm5-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-18").click(function(){
+			document.getElementById("kort").style.display = "none";
+			document.getElementById("conname").innerHTML = "KGF1";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("qskgf1-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-19").click(function(){
+			document.getElementById("kort").style.display = "block";
+			document.getElementById("conname").innerHTML = "TJF2";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("qstjf2-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-20").click(function(){
+			document.getElementById("kort").style.display = "none";
+			document.getElementById("conname").innerHTML = "KGF4";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("qskgf4-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-21").click(function(){
+			document.getElementById("kort").style.display = "none";
+			document.getElementById("conname").innerHTML = "KGF9";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("qskgf92-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-22").click(function(){
+			document.getElementById("kort").style.display = "none";
+			document.getElementById("conname").innerHTML = "KGF8";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("qskgf8-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-23").click(function(){
+			document.getElementById("value").value = document.getElementById("m5-fre2").innerHTML;
+			document.getElementById("kort").style.display = "block";
+			document.getElementById("conname").innerHTML = "M5";
+			document.getElementById("valveorm").innerHTML = "电机频率";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("edm5-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-24").click(function(){
+			document.getElementById("kort").style.display = "none";
+			document.getElementById("conname").innerHTML = "KGF2";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("qskgf2-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-25").click(function(){
+			document.getElementById("kort").style.display = "block";
+			document.getElementById("conname").innerHTML = "TJF6";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("qstjf6-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		$("#area-26").click(function(){
+			document.getElementById("kort").style.display = "none";
+			document.getElementById("conname").innerHTML = "KGF7";
+			document.getElementById("valveorm").innerHTML = "阀门开度";
+			document.getElementById("value").max = "100";
+			if(document.getElementById("qskgf7-state").style.background.indexOf("rgb(0, 250, 0)") != (-1))
+				document.getElementById("digchange").innerHTML = "关";
+			else
+				document.getElementById("digchange").innerHTML = "开";
+		});
+		<!-- 点击修改 -->
+		$("#anochange").click(function(){
+			<!-- 先判断是否可以修改 -->
+			
+			<!-- 获取data -->
+			
+			<!-- ajax修改+反馈 -->
+		});
+		<!-- 点击开关 -->
+		$("#digchange").click(function(){
+			<!-- 先判断是否可以开关 -->
+			
+			<!-- 获取data -->
+			
+			<!-- ajax修改+反馈 -->
+		});
 	});
 	</script>
 </html>
