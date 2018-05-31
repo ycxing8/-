@@ -9,14 +9,16 @@
 		<link rel="stylesheet" href="身份认证.css">
 		<link rel="stylesheet"  href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
 		<link rel="stylesheet"  href="bootstrap-3.3.7-dist/css/bootstrapValidator.min.css">
+		<link rel="stylesheet"  href="bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css">		
 		<!-- 引入jS 在这之前先运行jquery-->
 		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script  src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-		<script  src="bootstrap-3.3.7-dist/js/bootstrapValidator.min.js"></script>		
+		<script  src="bootstrap-3.3.7-dist/js/bootstrapValidator.min.js"></script>	
+		<script  src="bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.js"></script>					
 		<!-- 内部样式：背景图片 -->
 	</head>
 	<body>
-	<nav  class="navbar navbar-default">
+	<nav  class="navbar navbar-inverse">
 		<ul class="nav nav-pills navbar-nav">
 		<li><a id="username">欢迎您:ro</a></li>
 		<li><a id="permission">您的权限:super</a></li>
@@ -36,10 +38,95 @@
 	
 	<!-- 插入图片 -->
 <div class="content">
+			<div class="modal fade" id="modal1">
+				<div class="modal-dialog">
+				<div class="modal-content">
+				<div class="modal-header">
+				<h4 class="modal-title">产量信息</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+				<table class="table table-bordered table-hover table-responsive">
+				<tr class="info">
+				<td>名称</td>
+				<td>数值(单位M3)</td>
+				</tr>
+				<tr><td>一段总进料量</td><td id="td-1">20</td></tr>
+				<tr><td>一段总产水量</td><td id="td-2">20</td></tr>
+				<tr><td>一段单次进料量</td><td id="td-3">20</td></tr>
+				<tr><td>一段单次出水量</td><td id="td-4">20</td></tr>
+				<tr><td>二段总进料量</td><td id="td-5">20</td></tr>
+				<tr><td>二段总产水量</td><td id="td-6">20</td></tr>
+				<tr><td>二段单次进料量</td><td id="td-7">20</td></tr>
+				<tr><td>二段单次出水量</td><td id="td-8">20</td></tr>
+				</table>
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+				</div>
+				</div>
+				</div>
+			</div>
+			<div class="modal fade" id="modal2">
+				<div class="modal-dialog">
+				<div class="modal-content">
+				<div class="modal-header">
+				<h4 class="modal-title">设备信息</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+				<p><strong>序号：</strong><span id="p-id">01</span></p>
+				<p><strong>编号：</strong><span id="p-id2">01</span></p>		
+				<p><strong>名称：</strong><span id="p-name">01</span></p>
+				<p><strong>地点：</strong><span id="p-place">01</span></p>	
+				<p><strong>描述：</strong><span id="p-descript">01</span></p>	
+				<p><strong>图片路径：</strong><span id="p-path">01</span></p>
+				<p><strong>认证码：</strong><span id="p-conid">01</span></p>
+				<p><strong>状态：</strong><span id="p-state">01</span></p>
+				<p><strong>上次在线时间：</strong><span id="p-onlineT">01</span></p>
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+				</div>
+				</div>
+				</div>
+			</div>
+			<!-- //下载专区模态弹窗定义 -->
+				<div class="modal fade" id="modal3">
+				<div class="modal-dialog">
+				<div class="modal-content">
+				<div class="modal-header">
+				<h4 class="modal-title">报表日期选择</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<label>请选择日期</label>
+					<input id="monchoose" value="2018-4"></input>
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal" id="jump">提交</button>
+				</div>
+				</div>
+				</div>
+			</div>
 	<div id="con1">
 	<div class = "container">
 		<div class="row">
-			<div class="col-sm-12 col-md-12 col-lg-12">
+	<div class="col-lg-2 col-sm-2">
+		<!-- 左侧导航栏 -->
+		<ul class="nav  nav-pills nav-stacked" style="clear: both; background-color:#111111" >
+		<li><img class="img-responsive" src=背景图/title2.png></img></li>
+		<!-- <li><a style="color:#fffff" id="list1">用户名</a></li> -->
+		<li><a style="color:#00ff00" id="list1" data-toggle="modal" data-target="#modal2"><strong>设备描述</strong></li>
+		<li><a style="color:#00ff00" id="list2" data-toggle="modal" data-target="#modal1"><strong>产量信息</strong></li>
+		<li><a style="color:#00ff00" id="list3" data-toggle="modal" data-target="#modal3"><strong>日月报表</strong></li>		
+		<li><a style="color:#00ff00" id="list4"><strong>下载专区</strong></li>
+		<li><a style="color:#000000"><br></br></li>
+		<li><br></br></li><li><br></br></li><li><br></br></li><li><br></br></li>
+		<!-- <li><br></br></li><li><br></br></li><li><br></br></li><li><br></br></li><li><br></br></li> -->
+		</ul>
+	</div>
+			<div class="col-sm-10 col-md-10 col-lg-10">
 			<img class="img-responsive" src="背景图/process.jpg" id="img-process" usemap ="#processmap" />
 			    <div  style="position: absolute; top:10%; left: 1%;">
                     <p><label style="background-color:#00fa00" id="yd-enter-flow">121.1</label><small>M3/h</small></p>
@@ -182,80 +269,29 @@
 				<div  style="position: absolute; top:75.3%; left:64.2%;">
                     <p><label style="background-color:#00fa00" id="m4-fre">121.1</label><small>Hz</small></p>
 				</div>
-
 		</div>
+		<img class="img-responsive" src=背景图/title3.jpg></img>
 	</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-1 col-md-1">
-			<!-- 产量信息 -->
-			<button data-toggle="modal" data-target="#modal2" class="btn btn-info" data-keyboard="true">设备描述</button>
-			<div class="modal fade" id="modal2">
-				<div class="modal-dialog">
-				<div class="modal-content">
-				<div class="modal-header">
-				<h4 class="modal-title">设备信息</h4>
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-				<div class="modal-body">
-				<p><strong>序号：</strong><span id="p-id">01</span></p>
-				<p><strong>编号：</strong><span id="p-id2">01</span></p>		
-				<p><strong>名称：</strong><span id="p-name">01</span></p>
-				<p><strong>地点：</strong><span id="p-place">01</span></p>	
-				<p><strong>描述：</strong><span id="p-descript">01</span></p>	
-				<p><strong>图片路径：</strong><span id="p-path">01</span></p>
-				<p><strong>认证码：</strong><span id="p-conid">01</span></p>
-				<p><strong>状态：</strong><span id="p-state">01</span></p>
-				<p><strong>上次在线时间：</strong><span id="p-onlineT">01</span></p>
-				</div>
-				<div class="modal-footer">
-				<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
-				</div>
-				</div>
-				</div>
-			</div>
-			</div>
-			<div class="col-lg-1 col-md-1">
-			<!-- 产量信息 -->
-			<button data-toggle="modal" data-target="#modal1" class="btn btn-info" data-keyboard="true">产量信息</button>
-			<div class="modal fade" id="modal1">
-				<div class="modal-dialog">
-				<div class="modal-content">
-				<div class="modal-header">
-				<h4 class="modal-title">产量信息</h4>
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-				<div class="modal-body">
-				<table class="table table-bordered table-hover table-responsive">
-				<tr class="info">
-				<td>名称</td>
-				<td>数值(单位M3)</td>
-				</tr>
-				<tr><td>一段总进料量</td><td id="td-1">20</td></tr>
-				<tr><td>一段总产水量</td><td id="td-2">20</td></tr>
-				<tr><td>一段单次进料量</td><td id="td-3">20</td></tr>
-				<tr><td>一段单次出水量</td><td id="td-4">20</td></tr>
-				<tr><td>二段总进料量</td><td id="td-5">20</td></tr>
-				<tr><td>二段总产水量</td><td id="td-6">20</td></tr>
-				<tr><td>二段单次进料量</td><td id="td-7">20</td></tr>
-				<tr><td>二段单次出水量</td><td id="td-8">20</td></tr>
-				</table>
-				</div>
-				<div class="modal-footer">
-				<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
-				</div>
-				</div>
-				</div>
-			</div>
-			</div>
-		</div>
 	</div>
 	</div>
 	<div id="con2" style="display: none">
 		<div class="container">
 		<div class="row">
-		<div class="col-lg-12 col-md-12">
+		<div class="col-lg-2 col-sm-2">
+		<!-- 左侧导航栏 -->
+		<ul class="nav  nav-pills nav-stacked" style="clear: both; background-color:#111111" >
+		<li><img class="img-responsive" src=背景图/title2.png></img></li>
+		<!-- <li><a style="color:#fffff" id="list1">用户名</a></li> -->
+		<li><a style="color:#00ff00" id="list11" data-toggle="modal" data-target="#modal2"><strong>设备描述</strong></li>
+		<li><a style="color:#00ff00" id="list22" data-toggle="modal" data-target="#modal1"><strong>产量信息</strong></li>
+		<li><a style="color:#00ff00" id="list33" data-toggle="modal" data-target="#modal3"><strong>日月报表</strong></li>		
+		<li><a style="color:#00ff00" id="list44"><strong>下载专区</strong></li>
+		<li><a style="color:#000000"><br></br></li>
+		<li><br></br></li><li><br></br></li><li><br></br></li><li><br></br></li>
+		<!-- <li><br></br></li><li><br></br></li><li><br></br></li><li><br></br></li><li><br></br></li> -->
+		</ul>
+	</div>
+		<div class="col-lg-10 col-md-10">
 			<img class="img-responsive" src="背景图/清洗.jpg" usemap ="#qsmap" id="img-qs" />
 			<div  style="position: absolute; top:31.8%; left:6.1%;">
                 <label style="background-color:#ff0000;width:16px;height:16px;border-radius:8px" id="qskgf9-state"></label>
@@ -349,6 +385,7 @@
                 <p><label style="background-color:#00fa00" id="m5-fre2">121.1</label><small>Hz</small></p>
              </div>
 		</div>
+		<img class="img-responsive" src=背景图/title4.png></img>
 		</div>
 		</div>
 	</div>
@@ -1100,7 +1137,7 @@
 		$("#anochange").click(function(){
 			<!-- 先判断是否可以修改 -->
 			
-			<!-- 获取data -->
+			<!-- 获取data -->fg
 			
 			<!-- ajax修改+反馈 -->
 		});
@@ -1111,6 +1148,29 @@
 			<!-- 获取data -->
 			
 			<!-- ajax修改+反馈 -->
+		});
+		<!-- 进入下载页面 -->
+		$("#list4").click(function(){
+				window.open("下载专区.html");
+		});
+		$("#list44").click(function(){
+			window.open("下载专区.html");
+		});
+		$("#jump").click(function(){
+			var url = document.getElementById("monchoose").value;
+			url = "日月报表.html?date=" + url;
+			window.open(url);
+		});
+		$('#monchoose').datetimepicker({
+		format: "yyyy-mm",
+		autoclose: true,
+       <!-- todayBtn: true, -->
+       <!-- todayHighlight: true, -->
+       showMeridian: true,
+       pickerPosition: "bottom-left",
+       language: 'zh-CN',//中文，需要引用zh-CN.js包
+        startView: 1,//月视图
+        minView: 'month'//日期时间选择器所能够提供的最精确的时间选择视图
 		});
 	});
 	</script>

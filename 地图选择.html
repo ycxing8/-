@@ -38,7 +38,9 @@ body,  html { height: 100%; font-family: "微软雅黑"; }
 	<ol class="list fl">
 		<li><h4>请从列表中选择设备地点</h4> </li>
 		<li> <a href="控制页面1.html" id="a1">1.江苏苏港和顺生物科技有限公司</a> </li>
-		<li> <a href="javascript:void(0)" >2.其他...</a> </li>
+		<li> <a href="javascript:void(0)" >2.雄安新区</a> </li>
+		<li> <a href="javascript:void(0)">3.台湾省台北市</a></li>
+		<li> <a href="javascript:void(0)">4.其他...</a></li>		
 	</ol>
 </div>
 <div class="box">
@@ -55,7 +57,22 @@ var points = [{
 	lat: 33.183585 ,
 	title: "苏港和顺生物科技有限公司",
 	content: ["地址：盐城大丰市大丰港华丰农场东门北侧", "电话：110"]
-}];
+},
+{
+	id: 3,
+	lng: 115.973945,
+	lat: 38.947859 ,
+	title: "雄安新区",
+	content: ["地址：河北省雄安新区", "电话：110"]
+},
+{
+	id: 4,
+	lng: 121.465206,
+	lat: 25.15531 ,
+	title: "台湾台北",
+	content: ["地址：台湾省台北市", "电话：110"]
+}
+];
 
 new BaiduMap({
 	id: "container1",
